@@ -36,7 +36,7 @@
                     <td>@x.Edited</td>
                     <td>@x.Lent</td>
                     <td>@x.Notes</td>
-                    <td><a class="btn btn-primary" asp-action="Update" asp-route-movieID="@x.ID">Edit</a></td>
+                    <td><a class="btn btn-primary" asp-action="Edit" asp-route-movieID="@x.ID">Edit</a></td>
                     <td><a class="btn btn-danger" asp-action="Delete" asp-route-movieID="@x.ID">Delete</a></td>
                     @*<td>
                             <form id="@x.ID" asp-controller="Home" asp-action="Update" method="post">
