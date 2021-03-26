@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "New Movie";
+}
+
+@model MovieCollection.Models.Movie
+
+<h1>@ViewData["Title"]</h1>
+<form asp-action="newMovie" method="post">
+    <div><input asp-for="Category" placeholder="Category" required /></div><br />
+    <div><input asp-for="Title" placeholder="Title" required /></div><br />
+    <div><input asp-for="Year" placeholder="Year" required /></div><br />
+    <div><input asp-for="Director" placeholder="Director" required /></div><br />
+    <div>
+        <select asp-for="Rating" required>
+            <option value="" disabled selected>Select the Rating</option>
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="R">R</option>
+        </select>
+    </div><br />
+    <div>
+        <label for="edited">Edited?</label>
+        <input type="checkbox" asp-for="Edited" />
+    </div><br />
+    <div><input asp-for="Lent" placeholder="Lent To" /></div><br />
+    <div><input asp-for="Notes" placeholder="Notes" maxlength="25" /></div><br />
+    <div><input type="submit" id="submitButton" /></div>
+</form>
