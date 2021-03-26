@@ -4,10 +4,13 @@
 
 @model IEnumerable<MovieCollection.Models.Movie>
 
-<h1>@ViewData["Title"]</h1>
-<div>
-    <table>
-        <thead>
+<div class="text-center">
+    <div>
+        <h3>@ViewData["Title"]</h3>
+    </div>
+
+    <table class="table table-striped table-hover ">
+        <thead class="thead-dark">
             <tr>
                 <th>Category</th>
                 <th>Title</th>
@@ -17,22 +20,40 @@
                 <th>Edited</th>
                 <th>Lent To</th>
                 <th>Notes</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var x in ViewBag.results)
             {
-            <tr>
-                <td>@x.Category</td>
-                <td>@x.Title</td>
-                <td>@x.Year</td>
-                <td>@x.Director</td>
-                <td>@x.Rating</td>
-                <td>@x.Edited</td>
-                <td>@x.Lent</td>
-                <td>@x.Notes</td>
-            </tr>
+                <tr>
+                    <td>@x.Category</td>
+                    <td>@x.Title</td>
+                    <td>@x.Year</td>
+                    <td>@x.Director</td>
+                    <td>@x.Rating</td>
+                    <td>@x.Edited</td>
+                    <td>@x.Lent</td>
+                    <td>@x.Notes</td>
+                    <td><a class="btn btn-primary" asp-action="Update" asp-route-movieID="@x.ID">Edit</a></td>
+                    <td><a class="btn btn-danger" asp-action="Delete" asp-route-movieID="@x.ID">Delete</a></td>
+                    @*<td>
+                            <form id="@x.ID" asp-controller="Home" asp-action="Update" method="post">
+                                <span class="card-text p-1">
+                                    <button type="submit" class="btn btn-primary">Edit</button>
+                                </span>
+                            </form>
+                        </td>
+                        <td>
+                            <form id="@x.ID" asp-controller="Home" asp-action="Delete" method="post">
+                                <span class="card-text p-1">
+                                    <button type="submit" class="btn btn-warning">Delete</button>
+                                </span>
+                            </form>
+                        </td>*@
+                </tr>
             }
-        </tbody> 
+        </tbody>
     </table>
 </div>
