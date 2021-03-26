@@ -14,6 +14,6 @@ namespace MovieCollection.Models
 
         }
 
-        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Movie>Movies { get; set; }
     }
 }
